@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_195643) do
   create_table "drawings", force: :cascade do |t|
     t.bigint "game_id"
     t.string "color"
+    t.integer "lineSize"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "line"

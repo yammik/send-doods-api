@@ -20,7 +20,7 @@ skip_before_action :verify_authenticity_token
   private
 
   def drawing_params
-    params.require(:drawing).permit(:userId, :game_id, :color, :line => [:start => [:offsetX, :offsetY], :stop => [:offsetX, :offsetY]])
+    params.require(:drawing).permit(:userId, :game_id, :color, :lineSize, :line => [:start => [:offsetX, :offsetY], :stop => [:offsetX, :offsetY]])
 
   end
 end
