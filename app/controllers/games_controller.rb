@@ -6,6 +6,11 @@ skip_before_action :verify_authenticity_token
     render json: games
   end
 
+  def show
+    game = Game.find_by(id: params[:id])
+    render json: game
+  end
+
   def create
     puts "THIS IS GAME IN CREATE"
     game = Game.new(game_params)

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # post '/login', to: 'sessions#create'
   # delete '/logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :games, only: [:index, :create]
+  resources :games, only: [:index, :create, :show]
   resources :drawings, only: [:create]
 
   mount ActionCable.server => '/cable'
