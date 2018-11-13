@@ -3,7 +3,7 @@ skip_before_action :verify_authenticity_token
 
   def index
     messages = Message.all
-    render json: messages 
+    render json: messages
   end
 
   def show
@@ -30,7 +30,7 @@ skip_before_action :verify_authenticity_token
   private
 
   def message_params
-    params.require(:message).permit(:text)
+    params.require(:message).permit(:text, :game_id)
 
   end
 end
