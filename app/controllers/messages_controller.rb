@@ -1,6 +1,16 @@
 class MessagesController < ApplicationController
 skip_before_action :verify_authenticity_token
 
+  def index
+    messages = Message.all
+    render json: messages 
+  end
+
+  def show
+    message = Message.find_by(id: params[:id])
+    render json: message
+  end
+
   def create
     message = Message.new(message_params)
     game = Game.find(message_params[:game_id])
