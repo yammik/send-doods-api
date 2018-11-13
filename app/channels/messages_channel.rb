@@ -1,4 +1,4 @@
-class DrawingsChannel < ApplicationCable::Channel
+class MessagesChannel < ApplicationCable::Channel
   def subscribed
     puts "subscribed to DrawingsChannel at game: " + params[:game]
     game = Game.find(params[:game])

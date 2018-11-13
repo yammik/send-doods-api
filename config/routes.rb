@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [:index, :create, :show]
   resources :drawings, only: [:create]
+  resources :messages, only: [:create]
 
   mount ActionCable.server => '/cable'
 end
