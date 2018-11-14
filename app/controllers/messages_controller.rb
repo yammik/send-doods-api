@@ -30,7 +30,7 @@ skip_before_action :verify_authenticity_token
   private
 
   def message_params
-    params.require(:message).permit(:text, :game_id)
+    params.require(:message).permit(:text, :game_id, :user_name)
 
   end
 end
