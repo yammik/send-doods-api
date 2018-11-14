@@ -6,6 +6,7 @@ skip_before_action :verify_authenticity_token
     render json: messages
   end
 
+  # only necessary if you want to display messages prior to entering chatroom
   def show
     message = Message.find_by(id: params[:id])
     render json: message
