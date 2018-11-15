@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_220706) do
+ActiveRecord::Schema.define(version: 2018_11_15_153001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_220706) do
     t.boolean "active"
     t.string "current"
     t.string "answer"
+    t.boolean "answermode"
   end
 
   create_table "messages", force: :cascade do |t|

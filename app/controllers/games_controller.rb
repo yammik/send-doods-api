@@ -38,7 +38,7 @@ skip_before_action :verify_authenticity_token
   private
 
   def game_params
-    params.require(:game).permit(:title, :answer, :current, :active)
+    params.require(:game).permit(:title, :answer, :current, :active, :answermode)
   end
 
 end
