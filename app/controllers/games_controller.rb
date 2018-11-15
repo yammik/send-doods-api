@@ -29,8 +29,8 @@ skip_before_action :verify_authenticity_token
       serialized_data = ActiveModelSerializers::Adapter::Json.new(
         GameSerializer.new(game)
       ).serializable_hash
-      ActionCable.server.broadcast 'games_channel', serialized_data
-      byebug
+      puts 'adsfsadf'
+      GamesChannel.broadcast_to game, serialized_data
       head :ok
     end
   end

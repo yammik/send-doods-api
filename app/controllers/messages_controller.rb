@@ -16,8 +16,6 @@ skip_before_action :verify_authenticity_token
     message = Message.new(message_params)
     game = Game.find(message_params[:game_id])
 
-    puts "THIS IS MSG IN CREATE"
-    puts message
     if message.save
       serialized_data = ActiveModelSerializers::Adapter::Json.new(
         MessageSerializer.new(message)

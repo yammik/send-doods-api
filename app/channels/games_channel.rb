@@ -1,7 +1,11 @@
 class GamesChannel < ApplicationCable::Channel
   def subscribed
-    puts "sub to GChannel"
-    stream_from "games_channel"
+    if !!params[:game]
+      game = Game.find_by(id: params[:game])
+      stream_for game
+    else
+      stream_from "games_channel"
+    end
   end
 
 
